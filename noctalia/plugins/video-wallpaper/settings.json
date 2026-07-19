@@ -1,0 +1,37 @@
+{
+  "thumbCacheReady": true,
+  "DP-1": {
+    "volume": 1,
+    "currentWallpaper": "/home/garden/Pictures/Wallpapers/live/New video.mp4",
+    "automation": false,
+    "automationMode": "random",
+    "automationTime": 300,
+    "hardwareAcceleration": true,
+    "profile": "high-quality",
+    "fillMode": "crop",
+    "orientation": 0,
+    "isPlaying": true,
+    "noctaliaWallpaper": "/home/garden/Pictures/Wallpapers/akjdfg.png",
+    "isMuted": true
+  },
+  "activeBackend": "qt6-multimedia",
+  "enabled": true,
+  "monitorSpecific": false,
+  "wallpapersFolder": "/home/garden/Pictures/Wallpapers/live",
+  "DP-2": {
+    "currentWallpaper": "/home/garden/Pictures/Wallpapers/live/New video.mp4",
+    "volume": 1,
+    "automation": false,
+    "automationMode": "random",
+    "automationTime": 300,
+    "hardwareAcceleration": true,
+    "profile": "high-quality",
+    "fillMode": "crop",
+    "orientation": 0,
+    "isPlaying": true,
+    "noctaliaWallpaper": "/home/garden/Pictures/Wallpapers/orv-laptop-wallpapers-v0-26hkdzijq79e1.png",
+    "isMuted": true
+  },
+  "automationCustomTime": [],
+  "mpvSocket": "/tmp/mpv-socket"
+}
