@@ -1,0 +1,60 @@
+[config]
+version_check = false
+
+[templates.m3colors]
+input_path = '~/.config/matugen/templates/colors.json'
+output_path = '~/.local/state/quickshell/user/generated/colors.json'
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland/colors.conf'
+output_path = '~/.config/hypr/hyprland/colors.conf'
+
+[templates.hyprlock]
+input_path = '~/.config/matugen/templates/hyprland/hyprlock-colors.conf'
+output_path = '~/.config/hypr/hyprlock/colors.conf'
+
+[templates.fuzzel]
+input_path = '~/.config/matugen/templates/fuzzel/fuzzel_theme.ini'
+output_path = '~/.config/fuzzel/fuzzel_theme.ini'
+
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk-3.0/gtk.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk-4.0/gtk.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
+
+[templates.kde_colors]
+input_path = '~/.config/matugen/templates/kde/color.txt'
+output_path = '~/.local/state/quickshell/user/generated/color.txt'
+
+[templates.wallpaper]
+input_path = '~/.config/matugen/templates/wallpaper.txt'
+output_path = '~/.local/state/quickshell/user/generated/wallpaper/path.txt'
+
+# Zen-Nebula Theme Templates
+[templates.zen-UserContent]
+input_path = '~/.config/matugen/templates/zen/userContent.css.tpl'
+output_path = '~/.zen/obstjjs8.Default (release)/chrome/userContent.css'
+
+[templates.zen-userChrome]
+input_path = '~/.config/matugen/templates/zen/userChrome.css.tpl'
+output_path = '~/.zen/obstjjs8.Default (release)/chrome/userChrome.css'
+
+# Add all module templates (see config.toml in this repo for full list)
+ 
+# Discord Theme Templates
+[templates.discord-noctalia-material]
+input_path = "~/.config/matugen/templates/discord/discord-material.css.tpl"
+output_path = '~/.config/Vencord/themes/noctalia-material.theme.css'
+
+# Glimpse Launcher
+[templates.glimpse]
+input_path = "~/.config/matugen/templates/glimpse/style.css"
+output_path = "~/.config/glimpse/style.css"
+
+# Rofi
+[templates.rofi]
+input_path = "~/.config/matugen/templates/rofi/style-7.rasi"
+output_path = "~/.config/rofi/launchers/type-7/style-7.rasi"

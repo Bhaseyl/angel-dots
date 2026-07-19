@@ -1,0 +1,47 @@
+* {
+    font-family: 'Google Sans Flex';
+    font-size: 16px;
+    animation: none;
+    background-color: {{colors.background.default.hex}};
+}
+
+.search-field {
+    padding: 32px;
+    border: none;
+}
+
+.outer-container {
+    border-radius: 10px;
+}
+
+.results-list {
+    border-radius: 10px;
+}
+
+.result-box {
+    padding: 24px;
+    transition: all 0s;
+}
+
+.result-title {}
+
+.result-subtext {}
+
+.odd-row {
+}
+
+.result-box:selected {
+    background-color: transparent;
+    border: none;
+}
+
+scrollbar {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+}
+
+scrollbar slider {
+    border-radius: 0px;
+    background-color: #fff;
+    border: none;
+}
