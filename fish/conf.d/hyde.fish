@@ -147,6 +147,8 @@ alias .5='cd ../../../../..'
 
 alias v='nvim'
 
+alias sudo='doas'
+
 # fastfetch logo
 alias fetch='clear && pokeget random --hide-name | fastfetch --file-raw -'
 abbr mkdir 'mkdir -p'

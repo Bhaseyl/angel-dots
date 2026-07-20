@@ -35,17 +35,7 @@
 # Add your configurations here
 
 # set EDITOR nvim
-set EDITOR code
+set EDITOR nvim
 
 # set aurhelper yay
 set aurhelper yay
-
-
-
-
-
-
-
-
-
-

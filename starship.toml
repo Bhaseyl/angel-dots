@@ -21,7 +21,7 @@ error_symbol = "[   ](bold fg:red)"
 
 # Disable the package module, hiding it from the prompt completely
 [package]
-disabled = true
+disabled = false
 
 [git_branch]
 style = "bg: cyan"

@@ -1,181 +1,206 @@
-// -*- mode: jsonc -*-
 {
-    "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 32, // Waybar height (to be removed for auto height)
-    "width": 1900, // Waybar width
-    "spacing": 6, // Gaps between modules (4px)
-    
+    "layer": "top",
+    "position": "top",
+    "height": 28,
+    "reload_style_on_change": true,
     "modules-left": [
         "niri/workspaces",
-        "custom/separator",
-        // "disk",
-        // "custom/separator",
-        "cpu",
-        "temperature",
-        "custom/separator",
-        "memory",
-        // "custom/separator",
-        // "custom/pacman",
-        "custom/separator"
+	"cava",
+	"custom/media#1",
+	"custom/media#2",
+	"custom/media#3",
     ],
-
     "modules-center": [
+    	"idle_inhibitor",
         "clock",
-        "custom/separator",
-         "custom/weather"
+	"custom/weather",
     ],
     "modules-right": [
-        "custom/separator",
-    	"battery",
-    	"custom/separator",
-       "pulseaudio#microphone",
+        "tray",
+	"bluetooth",
+	"network",
+	"custom/swap",
+	"custom/audio_idle_inhibitor",
         "pulseaudio",
-        "backlight",
-        "custom/separator",
-        "network",
-        "custom/separator",
-        "group/music"
+        "battery",
+	"custom/notifications",
+	"custom/power",
     ],
-
-    "custom/separator": {
-        "format": "|",
-        "interval": "once",
-        "tooltip": false
+    "cava": {
+        // "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+        "framerate": 60,
+        "autosens": 1,
+        "sensitivity": 2,
+        "bars": 14,
+        "lower_cutoff_freq": 50,
+        "higher_cutoff_freq": 10000,
+        "hide_on_silence": false,
+        // "format_silent": "quiet",
+        "method": "pulse",
+        "source": "auto",
+        "stereo": false,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": true,
+        "waves": true,
+        "noise_reduction": 0.77,
+        "input_delay": 2,
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "actions": {
+            "on-click-right": "mode"
+        }
     },
-    
-    "niri/window": {
-    "format": "{}",
-    "max-length": 20,
-    "tooltip": true,
-  "separate-outputs": true
-},
-
-    
+    "custom/media#2": {
+        "format": " {} {icon} ",
+        "format-icons": {
+            "spotify": "",
+            "default": "🎵"
+        },
+        "exec": "~/.config/waybar/playerinfo.sh",
+        "escape": true,
+        "return-type": "json",
+        "tooltip": true,
+        "on-click": "playerctl play-pause",
+    },
+    "custom/media#1": {
+        "format": "",
+        "on-click": "playerctl previous"
+    },
+    "custom/media#3": {
+      "format": "",
+      "on-click": "playerctl next"
+    },
+    "river/tags": {
+        "num-tags": 5,
+    },
+    "niri/workspaces": {
+        "all-outputs": true,
+	"format" : "●",
+    },
+    "custom/player": {
+        "exec": "sb-player",
+        "max-length": 30,
+        "interval": 1,
+        "on-click": "playerctl play-pause",
+    },
+    "custom/dollar": {
+        "exec": "sb-dollar",
+        "interval": 21600,
+    },
+    "custom/swap": {
+    	"on-click": "darkman toggle",
+    	"tooltip": "Swap dark/light mode",
+    	"format": " "
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-icons": ["󰕿", "󰖀", "󰕾"],
+        "format-muted": "󰝟",
+        //"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+	"on-click": "pavucontrol",
+        "tooltip-format": "{volume}% ({desc})",
+        "scroll-step": 5,
+    },
     "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-
-        "format": " {:%A, %d %B %H:%M}",
-        "format-alt": " {:%H:%M}",
+      "interval": 60,
+      "format": "{:%a %d  %R}",
+      "tooltip-format": "<tt><small>{calendar}</small></tt>",
+      "calendar": {
+          "mode-mon-col": 3,
+          "format": {
+              "months": "<b>{}</b>",
+              "days": "{}",
+              "weeks": "<b>{:%W}</b>",
+              "weekdays": "<b>{}</b>",
+              "today": "<b><u>{}</u></b>",
+          },
+      },
+      "actions": {
+          "on-click": "mode",
+          "on-scroll-up": "shift_up",
+          "on-scroll-down": "shift_down",
+      },
     },
-    "cpu": {
-        "format": " {usage}%",
-        "tooltip": false
+    "network": {
+	"family": "ipv4",
+	"format": "⚠",
+	"format-wifi": " ",
+    	"format-ethernet": " ",
+    	"format-disconnected": "⚠",
+    	"on-click": "networkmanager_dmenu",
+    	"tooltip": true,
+    	"tooltip-format": " {essid} "
     },
-    "memory": {
-        "format": " {used:0.1f}GiB"
+    "tray": {
+        "icon-size": 16,
+        "spacing": 2,
     },
-    "temperature": {
-        // "thermal-zone": 2,
-        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": " {temperatureC}°C",
-        "format-icons": ["󰉬", "", "󰉪"]
-    },
-    "backlight": {
-    "device": "intel_backlight",
-    "format": "{icon} {percent}%",
-    "format-icons": ["", "", ""],
-    "on-scroll-up": "brightnessctl set 5%+",
-    "on-scroll-down": "brightnessctl set 5%-",
-    "tooltip": false
-},
-
     "battery": {
         "states": {
-            // "good": 95,
+            "good": 95,
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}% - {time}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging":" {capacity}%",
+        //"format": "{icon}  {capacity: >3}%",
+	"format": "{capacity}%",
+        "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
-        //"format-alt": "{icon} {time}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""],
-        "on-click": "kitty -e btop"
+	"on-click": "mate-power-statistics",
+        //"format-icons": ["", "", "", "", ""],
+	"interval": 5
     },
-    "battery#bat2": {
-        "bat": "BAT2"
+    "custom/power": {
+        "format": "⏻",
+        //"on-click": "~/.config/sway/scripts/rofi_",
+        "on-click": "~/.config/niri/scripts/power-menu.sh",
+        "tooltip": false
     },
-    "network": {
-        "max-length": 15,
-        "format-wifi": " {essid} ({signalStrength}%)",
-        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-        "format-linked": "{ifname} (No IP) 󰊗",
-        "format-disconnected": "󱛅 ",
-        "on-click": "~/.local/bin/wifi.sh"
+    "custom/notifications": {
+        "format": "{}",
+        "on-click": "swaync-client -t -sw",
+        "exec": "~/.config/waybar/scripts/waybar-notification.sh",
+        "tooltip": false,
+        "interval": 1
     },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": " {volume}%",
-        //"format-bluetooth": "{volume}% {icon} {format_s" , //ource}",
-        //"format-bluetooth-muted": "󰅶 {icon} {format_source}",
-        "format-muted": "󰅶" , //{format_source}",
-        //"format-source": " {volume}%",
-        //"format-source-muted": " ",
-        "on-click": "pavucontrol"
+    "custom/audio_idle_inhibitor": {
+        "format": "{icon}",
+	"exec": "sway-audio-idle-inhibit --dry-print-both-waybar",
+	"exec-if": "which sway-audio-idle-inhibit",
+	"return-type": "json",
+	"format-icons": {
+	    "output": "",
+	    "input": "",
+	    "output-input": "  ",
+	    "none": ""
+	}
     },
-
-    "pulseaudio#microphone": {
-    "format": "{format_source}",
-    "format-source": " {volume}%",
-    "format-source-muted": "",
-    "on-click": "pavucontrol",
-    "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-    "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
-    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
-    "tooltip-format": "{source_desc} | {source_volume}%"
-},
-
+    "bluetooth": {
+        "on-click": "bzmenu -l custom --launcher-command \"fuzzel --config=$HOME/.config/fuzzel/fuzzel-settings.ini -d -p '{prompt}'\"",
+	"format": "",
+	"format-disabled": "󰂲",
+	"format-off": "󰂲",
+	"format-connected": "󰂰 {device_alias}",
+	"format-connected-battery": "󰂰 {device_alias} {device_battery_percentage}%",
+	// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    },
+    "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+            "activated": "󰒳 ",
+            "deactivated": "󰒲 "
+        }
+    },
     "custom/weather": {
-    "format": "{}°C",
-    "tooltip": true,
-    "interval": 5400,
-    "exec": "wttrbar --nerd --hide-conditions --date-format '%m/%d' --mph --location=Semarang",
-    "return-type": "json"
-},
-
-    "custom/pacman": {
-        "exec": "~/.local/bin/pacman.sh",
-        "interval": 180,
-        "on-click": "kitty -e paru -Syu"
+        "format": "{}°",
+        "tooltip": true,
+        "interval": 1800,
+        "exec": "wttrbar --location selestat --date-format %d-%m-%Y --lang fr",
+        "return-type": "json"
     },
-
-
-
-
-"disk": {
-    "interval": 180,
-    "format-alt": " {used} / {total}",
-    "format": " {percentage_used}%",
-    "path": "/"
-},
-
-
-
-       "custom/spotify": {
-        "max-length": 25,
-	    "exec": "~/.local/bin/spotify.sh",
-	    "interval": 5,
-        "on-click": "playerctl next",
-        "on-click-right": "playerctl previous",
-	    "on-click-middle": "playerctl -p spotify play-pause",
-	    "on-scroll-up": "playerctl -p spotify volume 0.05+",
-"on-scroll-down": "playerctl -p spotify volume 0.05-"
-	},
-
-    "group/music": {
-    "orientation": "horizontal",
-    "modules": [
-      "custom/spotify",
-      "custom/before",
-      "custom/next"
-    ]
-  },
 }
+
+// vi:ft=hjson

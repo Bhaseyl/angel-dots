@@ -1,0 +1,14 @@
+// Spawn the awww daemon for the workspaces wallpaper
+spawn-at-startup "awww-daemon"
+
+// Spawn the second awww daemon for the backdrop wallpaper with the namespace
+spawn-at-startup "awww-daemon" "--namespace" "backdrop"
+
+// Cycle wallpapers and overview blur
+spawn-at-startup "/path/to/niri-wallpaper" "/path/to/wallpapers" "-i" "3600" "--workspaces-process-args" "--transition-type grow" "--blur-backdrop"
+
+// Tell Niri to use the "backdrop" namespace for the backdrop.
+layer-rule {
+    match namespace="^awww-daemonbackdrop$"
+    place-within-backdrop true
+}

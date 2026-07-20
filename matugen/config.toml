@@ -58,3 +58,9 @@ output_path = "~/.config/glimpse/style.css"
 [templates.rofi]
 input_path = "~/.config/matugen/templates/rofi/style-7.rasi"
 output_path = "~/.config/rofi/launchers/type-7/style-7.rasi"
+
+# Kitty
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/matugen-colors.conf'
+post_hook = 'pkill kitty || :'
