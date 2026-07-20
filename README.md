@@ -1,3 +1,5 @@
+(wip) not really meant for distribution yet
+
 Launch rofi by executing:
 
 ```
