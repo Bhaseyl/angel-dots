@@ -22,14 +22,14 @@ configuration {
 /*****----- Global Properties -----*****/
 * {
     font:                        "Monocraft 10";
-    background:                  #121318;
-    background-trans:            rgba(18, 19, 24, 0.85);
-    background-alt:              #121318;
-    foreground:                  #e3e1e9;
-    foreground-alt:              #2b3042;
-    selected:                    #c2c5dd;
-    active:                      #45464f;
-    urgent:                      #e3bada;
+    background:                  #141218;
+    background-trans:            rgba(20, 18, 24, 0.85);
+    background-alt:              #141218;
+    foreground:                  #e6e0e9;
+    foreground-alt:              #332d41;
+    selected:                    #ccc2db;
+    active:                      #49454e;
+    urgent:                      #f0b8c7;
 }
 
 /*****----- Main Window -----*****/

@@ -1,3 +1,8 @@
+//Environment Variables
+environment {
+  VAAPI_MPEG4_ENABLE "true"
+}
+
 // Spawn the awww daemon for the workspaces wallpaper
 spawn-at-startup "awww-daemon"
 

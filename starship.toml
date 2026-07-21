@@ -5,7 +5,7 @@ add_newline = false
 # Wedges 🭧🭒 🭣🭧🭓
 # Random noise 🬖🬥🬔🬗
 # Cool stuff 󰜥   
-
+scan_timeout = 300
 # format = """
 # $cmd_duration$username$hostname $directory $git_branch
 # $character

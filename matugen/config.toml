@@ -5,6 +5,11 @@ version_check = false
 input_path = '~/.config/matugen/templates/colors.json'
 output_path = '~/.local/state/quickshell/user/generated/colors.json'
 
+[templates.colors]
+input_path = '~/.config/matugen/templates/colors.json'
+output_path = '~/.config/matugen/colorsref.json'
+
+
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/hyprland/colors.conf'
 output_path = '~/.config/hypr/hyprland/colors.conf'
@@ -63,4 +68,10 @@ output_path = "~/.config/rofi/launchers/type-7/style-7.rasi"
 [templates.kitty]
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
 output_path = '~/.config/kitty/matugen-colors.conf'
-post_hook = 'pkill kitty || :'
+#post_hook = 'pkill kitty || :'
+
+#Niri
+[templates.niri]
+input_path = '~/.config/matugen/templates/niri/niri-colors.kdl'
+output_path = '~/.config/niri/colors.kdl'
+post_hook =  'niri validate || :'
