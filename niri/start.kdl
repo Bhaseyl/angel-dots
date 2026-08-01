@@ -1,6 +1,7 @@
 //Environment Variables
 environment {
   VAAPI_MPEG4_ENABLE "true"
+  DOCKER_HOST "unix://$XDG_RUNTIME_DIR/podman/podman.sock docker images"
 }
 
 // Spawn the awww daemon for the workspaces wallpaper
