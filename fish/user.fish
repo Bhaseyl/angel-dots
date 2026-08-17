@@ -35,7 +35,10 @@
 # Add your configurations here
 
 # set EDITOR nvim
-set EDITOR nvim
+set EDITOR vim
 
 # set aurhelper yay
-set aurhelper yay
+# set aurhelper yay
+
+#set path
+set -gx PATH $HOME/.cargo/bin $PATH

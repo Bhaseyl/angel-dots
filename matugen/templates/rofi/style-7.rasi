@@ -21,13 +21,13 @@ configuration {
 
 /*****----- Global Properties -----*****/
 * {
-    font:                        "Monocraft 10";
+    font:                        "LiterationMono Nerd Font Mono 12";
     background:                  {{colors.background.default.hex}};
     background-trans:            {{colors.background.default.rgba | set_alpha: 0.85}};
     background-alt:              {{colors.surface.default.hex}};
     foreground:                  {{colors.on_background.default.hex}};
     foreground-alt:              {{colors.on_secondary.default.hex}};
-    selected:                    {{colors.secondary.default.hex}};
+    selected:                    {{colors.primary.default.hex}};
     active:                      {{colors.surface_variant.default.hex}};
     urgent:                      {{colors.tertiary.default.hex}};
 }
@@ -71,15 +71,15 @@ listbox {
 inputbar {
     enabled:                     true;
     spacing:                     30px;
-    padding:                     90px 40px;
+    padding:                     72px 60px;
     background-color:            transparent;
-    background-image:            url("~/.config/rofi/images/boisvert.png", height);
+    background-image:            url("/home/angel/.config/rofi/images/wings.png", height);
     text-color:                  @foreground;
     orientation:                 horizontal;
     children:                    [ "textbox-prompt-colon", "entry" ];
 }
 textbox-prompt-colon {
-    enabled:                     true;
+    enabled:                     false;
     expand:                      false;
     str:                         "";
     padding:                     12px 20px;

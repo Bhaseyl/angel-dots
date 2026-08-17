@@ -27,13 +27,13 @@ fastfetch --config hyde/*.jsonc
       "format": "┌──────────────────────────────────────────┐"
     },
     {
-      "type": "chassis",
+      "type": "host",
       "key": "  󰇺 Chassis",
-      "format": "{1} {2} {3}"
+      "format": "{1}"
     },
     {
       "type": "os",
-      "key": "  󰣇 OS",
+      "key": "   OS",
       "format": "{2}",
       "keyColor": "red"
     },

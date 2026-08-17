@@ -1,0 +1,15 @@
+[theme.templates]
+enable_builtin_templates   = true
+enable_community_templates = true
+builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "kitty", "niri", "starship" ]
+community_ids = [ "zen-browser", "discord", "lazygit", "yazi" ]
+
+
+[theme.templates.user.steam]
+input_path = "/home/angel/.local/state/noctalia/community-templates/steam/steam.css"
+output_path = "~/.steam/steam/steamui/skins/Material-Theme/css/main/colors/matugen.css"
+
+# Rofi
+[theme.templates.user.rofi]
+input_path = "~/.config/matugen/templates/rofi/style-7.rasi"
+output_path = "~/.config/rofi/launchers/type-7/style-7.rasi" 
