@@ -1,0 +1,7 @@
+source /home/angel/.vim/options.vim
+source /home/angel/.vim/keybinds.vim
+source /home/angel/.vim/plugins.vim
+source /home/angel/.vim/colors.vim
+source /home/angel/.vim/fzf.vim
+source /home/angel/.vim/lightline.vim
+source /home/angel/.vim/lsp.vim
