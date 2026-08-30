@@ -22,14 +22,14 @@ configuration {
 /*****----- Global Properties -----*****/
 * {
     font:                        "LiterationMono Nerd Font Mono 12";
-    background:                  #1e1e2e;
-    background-trans:            rgba(30, 30, 46, 0.85);
-    background-alt:              #1e1e2e;
-    foreground:                  #cdd6f4;
-    foreground-alt:              #1e1e2e;
-    selected:                    #f5c2e7;
-    active:                      #313244;
-    urgent:                      #94e2d5;
+    background:                  #000000;
+    background-trans:            rgba(0, 0, 0, 0.85);
+    background-alt:              #000000;
+    foreground:                  #a9b1d6;
+    foreground-alt:              #1f2335;
+    selected:                    #7a88cf;
+    active:                      #0e142b;
+    urgent:                      #9cd58a;
 }
 
 /*****----- Main Window -----*****/
