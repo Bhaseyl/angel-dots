@@ -143,6 +143,10 @@ alias v='vim .'
 #alias sudo='doas'
 alias doas=sudo
 
+function cat
+    command bat --color always -pp $argv
+end
+
 # apk package aliases
 # alias pkgi='doas apk add'
 # alias pkgs='apk search'
